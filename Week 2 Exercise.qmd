@@ -1,0 +1,82 @@
+---
+title: "Week 2: Basic Data Reporting"
+author: "Stantis"
+format: html
+editor: visual
+---
+
+## Intro
+
+This week, let's explore the basics of data exploration and reporting when you first get some data. Maybe it's data someone else has collected, maybe it's something you've generated.
+
+First, I like to run some setup code. It loads the packages we'll use for this session, plus the dataframe.
+
+```{r}
+#| label: load dataframe; setup packages
+#| echo: false
+library(readr)
+df <- read.csv("pone.0233912.s002.csv")
+```
+
+### First Looks
+
+The first thing to do is see the shape of the dataset you're working with. How many variables does it have? How many observations?
+
+In archaeology, it's always good to center place in every beginning of the report. Using the paper, summarize where these artifacts are from and what time range.
+
+-   [ ] **Task:** At the bottom of this quarto is a space for your 'report'. Begin this section by filling in the following. For the three trait, pick three traits that interest you **that aren't the traits I've chosen as examples in the following documentation- Artefact.ID, Thickness or Platform.Surface**. Make sure at least two are numeric.
+
+    AUTHOR NAMES recorded stone artifacts (n = \_\_\_\_\_\_) from WHERE (TIME PERIOD). They recorded traits like (TRAIT 1), (TRAIT 2), (TRAIT 3).
+
+    hint: for AUTHOR NAMES, you can write something like 'FIRST AUTHOR'S LAST NAME et al.' or 'FIRST AUTHOR'S LAST NAME and colleagues'.
+
+-   [ ] After writing that into your report, create a new subheading (a heading 3) in your report. You can do this by starting the line with three hashtags. Label this heading 'Traits'
+
+-   [ ] In subheading 'Traits', write at least one sentence about each of the three traits you've chosen. Note the name of the trait, the type of data (of the four types), units (if applicable). In actual reports, you'd rarely note the type of data it is, but let's do it to practice.
+
+    Example: Thickness refers to the maximum thickness of the artifact. A continuous trait, thickness was measured in centimeters. Platform Surface (Platform.Surface in the dataframe) is a categorical trait describing the nature of the striking platform on the proximal portion of the lithic flake.
+
+### Descriptive statistics
+
+You've described the overall dataset and what it is in the initial part of the report. Now, go into the descriptive statistics for the traits you've chosen.
+
+Let's start with qualitative data, since it's not usually our focus.
+
+We can use R to create a table of the qualitative data.
+
+```{r}
+#| label: tabulate categorical data
+table(df$Platform.Surface)
+```
+
+-   [ ] Within your report, copy/paste/modify the code above to create a table for any qualitative data you've chosen to examine more closely. Write any percentage values that seem useful.
+
+Example: 'Regarding platform surfaces, 8/46 (17%) are plain.' HINT: I calculated the percentage here by first tabulating the data using table(), and then dividing the number of plain surfaces by the total number of observations in the console, then multiplying by 100. `8/46*100`
+
+Then, let's summarize the quantitative data you've chosen to examine. Next week, we'll do this numerically, but for now let's explore visually. We'll keep the coding for graphs easy this week, but we'll work on making our graphs look nicer later in the semester.
+
+```{r}
+#|: label: example numeric data histogram
+hist(df$Thickness)
+```
+
+-   [ ] Within your report, copy/paste/modify the code above to create histograms for any quantitative data you've chosen to examine more closely. Describe any trends you see. Example: 'Plotting thickness, the data skew slightly right.'
+
+Then, you'll plot a scatterplot of the two variables you chose. (Hint, if you're ever wondering how to do something, you can put a ? in front of the function you're interested in learning more about. Try `?plot()` in the console).
+
+I'm going to grab Mass as another numeric value, just for this example (you're still welcome to use it in your work).
+
+```{r}
+#|: label: example numeric data scatterplot
+plot(df$Thickness, df$Width)
+```
+
+-   [ ] Within your report, copy/paste/modify the code above to create a scatter plot of the two quantitative variables you've chosen to examine more closely. Describe any trends you see. Example: 'Plotting thickness on the x axis and width on the y axis, the variables appear positively correlated.'
+-   [ ] Cite the paper as the data source as the last part of the report. Write something like 'Data source:' and then the paper, Chicago style. The paper can be found [here](https://doi.org/10.1371/journal.pone.0287490).
+-   [ ] Final task: rename the title and author of this quarto document (reminder, it's up top)
+
+## Report
+
+<!--# this is where you'll drop in your report, following the instructions above marked as tasks. Be sure to drop them in order so they make sense -->
+
+### 
