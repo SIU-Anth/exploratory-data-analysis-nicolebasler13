@@ -2,7 +2,7 @@
 title: "Week 2: Basic Data Reporting"
 author: "Stantis"
 format: html
-editor: visual
+editor: NicoleBasler
 ---
 
 ## Intro
@@ -24,7 +24,7 @@ The first thing to do is see the shape of the dataset you're working with. How m
 
 In archaeology, it's always good to center place in every beginning of the report. Using the paper, summarize where these artifacts are from and what time range.
 
--   [ ] **Task:** At the bottom of this quarto is a space for your 'report'. Begin this section by filling in the following. For the three trait, pick three traits that interest you **that aren't the traits I've chosen as examples in the following documentation- Artefact.ID, Thickness or Platform.Surface**. Make sure at least two are numeric.
+-   [x] **Task:** At the bottom of this quarto is a space for your 'report'. Begin this section by filling in the following. For the three trait, pick three traits that interest you **that aren't the traits I've chosen as examples in the following documentation- Artefact.ID, Thickness or Platform.Surface**. Make sure at least two are numeric.
 
     AUTHOR NAMES recorded stone artifacts (n = \_\_\_\_\_\_) from WHERE (TIME PERIOD). They recorded traits like (TRAIT 1), (TRAIT 2), (TRAIT 3).
 
@@ -78,5 +78,9 @@ plot(df$Thickness, df$Width)
 ## Report
 
 <!--# this is where you'll drop in your report, following the instructions above marked as tasks. Be sure to drop them in order so they make sense -->
+
+Traits- elevation, mass, and quality.
+
+Benjamin et al recorded stone artifacts (n =269) from Mrurujuga Coastline North West Aurstrailar (Ple). They recorded traits like (elevation), (mass), (quality).
 
 ### 
